@@ -60,7 +60,15 @@ function displayCharacters(characters) {
                         </div>
                         <div class="modal-body">
                             <img src="${image}" class="img-fluid" alt="${name}">
+                            <p><strong>Descripción:</strong> ${character.description}</p>
+                            <p><strong>Comics:</strong> ${character.comics.available}</p>
+                            <p><strong>Series:</strong> ${character.series.available}</p>
+                            <p><strong>Modified:</strong> ${new Date(character.modified).toISOString().slice(0, 10)}</p>
+                
                             <!-- Puedes agregar más información del personaje aquí -->
+                        </div>
+                        <div class="modal-footer">
+                            <a href="${character.urls.find(url => url.type === 'comiclink').url}" target="_blank" class="btn btn-primary">Ver más</a>
                         </div>
                     </div>
                 </div>
