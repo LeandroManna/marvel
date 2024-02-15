@@ -1,0 +1,151 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+img {
+    max-width: auto;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Estilos para las tarjetas */
+.card {
+    max-height: 300px;
+    max-width: 300px; /* Ajusta el tamaño máximo de la tarjeta */
+    overflow: hidden; /* Oculta cualquier contenido que se salga de los límites de la tarjeta */
+    position: relative;
+    transition: transform 0.3s, opacity 0.3s; /* Agrega transición para el efecto de acercamiento y opacidad */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Levanta ligeramente la tarjeta al hacer hover */
+}
+
+.card-img-top {
+    object-fit: cover; /* Evita que la imagen se deforme */
+    opacity: 1; /* Opacidad inicial */
+}
+
+.card:hover .card-img-top {
+    opacity: .3; /* Opacidad al hacer hover */
+    cursor: pointer; /* Cambia el cursor a una mano */
+}
+
+.card-body {
+    position: absolute; /* Establece la posición absoluta para que el título se pueda superponer a la imagen */
+    bottom: 0; /* Coloca el título en la parte inferior de la tarjeta */
+    left: 0; /* Coloca el título en el borde izquierdo de la tarjeta */
+    width: 100%; /* Establece el ancho al 100% para que ocupe todo el ancho de la tarjeta */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente para resaltar el título */
+    color: #fff; /* Color blanco para el texto del título */
+    font-weight: bold; /* Texto en negrita */
+    padding: 2px; /* Espaciado interno del título */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    transition: bottom 0.8s, height 0.5s; /* Agrega transición para el movimiento del título y cambio de altura */
+    z-index: 1; /* Asegura que el texto esté por encima de otros elementos */
+    height: 25%; /* Ajusta la altura inicial para que el fondo se adapte al contenido */
+    overflow: hidden;
+}
+
+.card:hover .card-body {
+    height: 100%; /* Ajusta la altura al 100% de la tarjeta al hacer hover */
+    cursor: pointer;
+}
+
+.title {
+    color: #fff; /* Color blanco para el texto del título */
+    transition: top 0.8s; /* Agrega transición para el movimiento del título */
+    position: absolute; /* Establece la posición absoluta para que el título se pueda mover */
+    top: 20%; /* Coloca el título en el centro verticalmente */
+    /* left: 40%; */ /* Coloca el título en el centro horizontalmente */
+    transform: translate(0, 0); /* Centra el título completamente */
+}
+
+.card:hover .title {
+    top: 25px; /* Mueve el título hacia arriba al hacer hover */
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed; /* Posición fija para que se muestre sobre el contenido */
+    z-index: 1; /* Colocar el modal sobre todo el contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilitar el desplazamiento cuando el contenido sea demasiado grande */
+    background-color: rgb(0,0,0); /* Fondo negro semitransparente */
+    background-color: rgba(0,0,0,0.4); /* Fondo negro semitransparente */
+    transition: opacity 1s; /* Ajustar la velocidad de la transición */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: #fefefe; /* Fondo blanco para el contenido del modal */
+    margin: 15% auto; /* Centrar vertical y horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+}
+
+/* Estilo para el contenedor del botón de cierre */
+.close-container {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    background-color: #c7c7c7;
+    /* border-radius: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(45deg); /* Girar el cuadrado 45 grados */
+}
+
+/* Estilos para el botón de cerrar */
+.close {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-close {
+    margin: 0 !important;
+    transform: rotate(45deg); /* Girar el cuadrado 45 grados */
+    opacity: inherit !important;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
